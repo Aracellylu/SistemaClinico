@@ -1,0 +1,47 @@
+Médico:
+     -medico1
+     - $2y$10$H.jaDJbT3CqZd/W8aUIy6uw8bCnWBnoCHp3HkwBsYJQ7.wDMBtaBa
+
+Enfermera:
+     -enfermera1
+     -$2y$10$H.jaDJbT3CqZd/W8aUIy6uw8bCnWBnoCHp3HkwBsYJQ7.wDMBtaBa
+
+Cajero:
+     -cajero1
+     - $2y$10$H.jaDJbT3CqZd/W8aUIy6uw8bCnWBnoCHp3HkwBsYJQ7.wDMBtaBa
+
+Administrador:
+     -admin
+     -$2y$10$xxeC1DxZyaXvlf4OensbIulVsIGyc6z3re7nkyzW.ZFy.v5CkokGC
+
+Paciente:
+     -paciente1
+     -$2y$10$xxeC1DxZyaXvlf4OensbIulVsIGyc6z3re7nkyzW.ZFy.v5CkokGC
+
+
+CONTRASEÑA:
+password
+
+Administrador: Acceso completo para gestionar usuarios, asignaciones, reportes.
+Médico: Acceso a las consultas médicas y gestión de historiales clínicos.
+Enfermera: Acceso a la apertura de historias clínicas y registro de signos vitales.
+Cajero: Acceso a la gestión de pagos
+
+
+asignación roles: 
+
+// <?php if (isset($roles) && $roles->num_rows > 0): ?>  
+    <!-- Aquí va el código para mostrar la tabla -->
+    <?php while($row = $roles->fetch_assoc()): ?>
+        <tr>
+            <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['descripcion']; ?></td>
+            <td><?php echo $row['estado']; ?></td>
+            <td>
+                <!-- Botones para editar/eliminar -->
+            </td>
+        </tr>
+    <?php endwhile; ?>
+<?php else: ?>
+    <tr><td colspan="4">No se encontraron roles.</td></tr>
+<?php endif; ?> 
